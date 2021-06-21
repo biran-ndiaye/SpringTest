@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhml ">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form style="width: 50%;margin: 20px auto"  method="post" th:action="@{/saveEmployee}"  th:object="${employee}">
+    <h3>Modifier un employee</h3>
+    <input type="hidden" th:field="*{id}">
+    <div class="form-group">
+        <label for="firstName">Prenom</label>
+        <input type="text" class="form-control" th:filed="*{firstName}" th:value="${employee.firstName}" id="firstName" aria-describedby="emailHelp" placeholder="Saisir le prenom">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" class="form-control" th:field="*{lastName}" th:value="${employee.lastName}"  id="lastName" aria-describedby="emailHelp" placeholder="Saisir le nom">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" th:field="*{email}" value="${employee.email}" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+    <button  class="btn btn-primary" onclick="window.history.back()">Annuler</button>
+</form>
+</body>
+</html>

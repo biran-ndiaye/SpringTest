@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhml ">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Title</title>
+
+</head>
+<body>
+<div style=" width: 50% ;margin: 30px auto">
+    <form  method="post" th:action="@{/saveEmployee}" >
+        <h3>Ajouter un nouveau Employee  Employee</h3>
+        <div class="form-group">
+            <label for="firstName">Prenom</label>
+            <input type="text" name="firstName" class="form-control" id="firstName"  placeholder="Saisir le prenom">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Saisir le nom">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name = "email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button  class="btn btn-primary" id="annuler">Annuler</button>
+    </form>
+    <script>
+        document.getElementById("annuler").addEventListener("click",(e)=>{
+            e.preventDefault();
+            window.history.back();
+        })
+    </script>
+</div>
+
+</body>
+</html>

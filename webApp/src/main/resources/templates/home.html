@@ -26,7 +26,7 @@
             <tr th:each="employee:${employees}">
                 <td><span th:text="${employee.firstName}">Prénom</span></td>
                 <td><span th:text="${employee.lastName}" >Nom</span></td>
-                <td><span th:text="${employee.email}"></span>Email</td>
+                <td><span th:text="${employee.email}">Email</span></td>
                 <td><a th:href="@{/deleteEmploye/{id}(id=${employee.id})}">Supprimer</a> &nbsp;&nbsp;&nbsp; <a th:href="@{/updateEmployee/{id}(id=${employee.id})}">Modifier </a> </td>
             </tr>
             </tbody>

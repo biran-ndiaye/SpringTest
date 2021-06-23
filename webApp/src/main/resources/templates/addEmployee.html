@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Title</title>
+    <title> New Employee</title>
 
 </head>
 <body>
 <div style=" width: 50% ;margin: 30px auto">
-    <form  method="post" th:action="@{/saveEmployee}" >
+    <form   method="post" th:action="@{/saveEmployee}"  th:object="${NewEmployee}">
         <h3>Ajouter un nouveau Employee  Employee</h3>
         <div class="form-group">
             <label for="firstName">Prenom</label>
-            <input type="text" name="firstName" class="form-control" id="firstName"  placeholder="Saisir le prenom">
+            <input type="text" th:field="*{firstName}" class="form-control" id="firstName"  placeholder="Saisir le prenom" required >
         </div>
         <div class="form-group">
             <label for="lastName">Nom</label>
-            <input type="text" name="lastName" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Saisir le nom">
+            <input type="text" th:field="*{lastName}" class="form-control" id="lastName"  placeholder="Saisir le nom" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name = "email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" th:field="*{email}" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
         <button  class="btn btn-primary" id="annuler">Annuler</button>

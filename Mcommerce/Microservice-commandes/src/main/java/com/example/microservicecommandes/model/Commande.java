@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @Entity

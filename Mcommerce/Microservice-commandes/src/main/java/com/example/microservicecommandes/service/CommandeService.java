@@ -15,6 +15,13 @@ public class CommandeService {
     private CommandeRepository commandeRepository;
 
     /**
+     * @return get all order
+     */
+    public Iterable<Commande> getCommandes(){
+        return commandeRepository.findAll();
+    }
+
+    /**
      *
      * @param id - get order by id
      * @return an order or null
@@ -29,6 +36,14 @@ public class CommandeService {
      * @return added order
      */
     public Commande addCommande(Commande commande){
+        return commandeRepository.save(commande);
+    }
+    /**
+     *
+     * @param commande - order to update
+     * @return updated order
+     */
+    public Commande updateCommande(Commande commande){
         return commandeRepository.save(commande);
     }
 }

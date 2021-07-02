@@ -17,7 +17,7 @@ public class Paiement {
     @Column(name = "id_commande", unique = true)
     private Integer idCommande;
 
-    private Integer numeroCarte;
+    private Long numeroCarte;
 
 
 }

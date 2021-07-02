@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Confirmation De Paiement</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center" style="text-align: center"><a style="cursor: pointer;" title="Page Accueil" href="/">Application Microcommerce</a></h2>
+        <div class="row">
+            <div class="col-md-4 mx-auto mt-5 text-center">
+                <p class="alert alert-success" role="alert" th:if="${paiementOk}">Paiement Accepté</p>
+
+                <p class="alert alert-danger" role="alert" th:unless="${paiementOk}">le paiement n'a pas abouti</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

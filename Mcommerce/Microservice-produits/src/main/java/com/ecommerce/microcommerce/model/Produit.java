@@ -16,12 +16,17 @@ public class Produit {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "description")
     @Length(min = 1, max = 20, message = "le nom doit etre compris entre 1 et 20")
-    private String nom;
+    private String description;
 
-    @JsonIgnore // pour cacher certaines informations
+    //@JsonIgnore // pour cacher certaines informations
     @Column(name = "price")
     @Min(value = 1)
     private double prix;
+
+    private String image;
+
+    @Column(name = "title")
+    private String titre;
 }
